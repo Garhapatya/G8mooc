@@ -1,3 +1,7 @@
+/**
+ * 登录页
+ */
+
 import CommonConstants from '../common/constants/CommonConstants';
 import Logger from '../common/utils/Logger';
 import router from '@ohos.router';
@@ -5,9 +9,9 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct Index {
-  @State userName: string = ''; // 用户名使用手机号
-  @State password: string = ''; // 密码
-  @State isSelect: boolean = false; // 隐私协议是否勾选
+  @State userName: string = '';
+  @State password: string = '';
+  @State isSelect: boolean = false;
 
   private userNameCheckReg = /^[3|4|5|6|7|8|9][0-9]{9}$/; // 手机号校验规则
 

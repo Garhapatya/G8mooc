@@ -7,9 +7,9 @@ import SubCatCourseList from '../view/SubCatCourseList'
 @Entry
 @Component
 struct MoreITCoursePage {
-  @State selectIndex: number = 0 // 二级分类选中索引
-  @State sortType: string = '综合' // 排序类型：综合、人气、好评率、价格
-  @State priceOrder: string = '降序' // 价格排序：升序、降序
+  @State selectIndex: number = 0
+  @State sortType: string = '综合'
+  @State priceOrder: string = '降序'
 
   // 本地定义分类数据
   private subCategories: CourseTypeBean[] = [

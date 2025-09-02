@@ -1,8 +1,13 @@
+/**
+ * 社区功能主页
+ */
+
 import CommonConstants from '../common/constants/CommonConstants';
 import HomeView from '../view/HomeView';
 import mainViewModel from '../viewmodel/MainViewModel';
 import CommunityView from '../view/CommunityView';
-import MineView from '../view/MineView'; // 导入 MineView 组件
+import MineView from '../view/MineView';
+
 import CourseView from '../view/CourseView';
 
 @Entry
@@ -11,7 +16,8 @@ struct MainPage {
   @State index: number = 0;
   private tabsController: TabsController = new TabsController();
 
-  @Builder baseTab(title: string, targetIndex: number): void {
+  @Builder
+  baseTab(title: string, targetIndex: number): void {
     Column() {
       Text(this.index === targetIndex ? '●' : '○')
         .fontSize(16)
@@ -47,15 +53,16 @@ struct MainPage {
       .tabBar(this.baseTab('课程', 1))
 
       // 社区页 - 使用CommunityView组件
+      //修改测试
       TabContent() {
-        CommunityView() // 挂载社区主页
+        CommunityView()
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('社区', 2))
 
       // 我的页 - 使用 MineView 组件
       TabContent() {
-        MineView() // 挂载个人中心页面
+        MineView()
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('我的', 3))
@@ -67,4 +74,6 @@ struct MainPage {
       this.index = index;
     })
   }
+
+
 }
