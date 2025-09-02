@@ -8,7 +8,10 @@ export default struct MineView {
   @Builder
   myAvatar(): void {
     Column() {
-      // 个人信息行
+
+
+
+
       Row() {
         Image($r('app.media.avatar5'))
           .width(50)
@@ -17,7 +20,7 @@ export default struct MineView {
           .margin({ left: 8 })
 
         Column() {
-          Text('Jerry')
+          Text('G8MOOC')
             .fontSize(16)
             .fontWeight(FontWeight.Bold)
           Text('但有绿杨树系马，处处有路透长安！')

@@ -45,7 +45,7 @@ export default struct HomeITContent {
         .width('90%')
         .height(200)
 
-        // 推荐课程标题
+        // 推荐课程
         Row() {
           Text('推荐课程')
             .fontSize(18)
@@ -62,7 +62,7 @@ export default struct HomeITContent {
         .justifyContent(FlexAlign.SpaceBetween)
         .width('90%')
 
-        // 课程查询条件控制栏
+        // 查询条件控制栏
         CourseQueryCondition({
           selectIndex: $conditionSelect,
           order_desc: $priceOrderDesc

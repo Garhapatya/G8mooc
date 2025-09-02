@@ -1,7 +1,4 @@
-/**
- * Date:2023/8/5
- * author:lixiuzhong
- */
+
 
 //课程接口
 export interface CourseItem {

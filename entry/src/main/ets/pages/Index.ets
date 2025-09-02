@@ -1,6 +1,3 @@
-/**
- * 登录页
- */
 
 import CommonConstants from '../common/constants/CommonConstants';
 import Logger from '../common/utils/Logger';
