@@ -1,5 +1,7 @@
 import CommonConstants from '../common/constants/CommonConstants';
 import HomeView from '../view/HomeView';
+import mainViewModel from '../viewmodel/MainViewModel';
+import CommunityView from '../view/CommunityView';
 
 @Entry
 @Component
@@ -39,14 +41,16 @@ struct MainPage {
       TabContent() {
         Text('课程页面')
           .fontSize(30)
+          .width('100%')
+          .height('100%')
+          .textAlign(TextAlign.Center)
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('课程', 1))
 
-      // 社区页（占位）
+      // 社区页 - 使用CommunityView组件
       TabContent() {
-        Text('社区页面')
-          .fontSize(30)
+        CommunityView() // 挂载社区主页
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('社区', 2))
@@ -55,6 +59,9 @@ struct MainPage {
       TabContent() {
         Text('我的页面')
           .fontSize(30)
+          .width('100%')
+          .height('100%')
+          .textAlign(TextAlign.Center)
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('我的', 3))

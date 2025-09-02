@@ -2,8 +2,265 @@ import HomeItemBean from '../common/bean/HomeItemBean';
 import CampBean from '../common/bean/CampBean';
 import CourseBean from '../common/bean/CourseBean';
 import CourseTypeBean from '../common/bean/CourseTypeBean';
+import CommunityTypeBean from '../common/bean/CommunityTypeBean';
+import PublishItem from '../common/bean/PublishItem';
 
 export class MainViewModel {
+
+  // 获取社区发现下的分类列表
+  getCommunityTypeList(): Array<CommunityTypeBean> {
+    let communityTypeList: CommunityTypeBean[] = [
+      {
+        typeId: 0,
+        type: 'IT',
+        tags: ['全部', '笔记', '学习干货', '作品', '心得体会']
+      },
+      {
+        typeId: 1,
+        type: '英语',
+        tags: ['全部', '笔记', '学习干货', '配音', '秘籍']
+      },
+      {
+        typeId: 2,
+        type: '考试',
+        tags: ['全部', '笔记', '学习干货', '软考', '心得体会']
+      },
+      {
+        typeId: 3,
+        type: '职场',
+        tags: ['综合', '面试', '心得体会']
+      },
+      {
+        typeId: 4,
+        type: '兴趣',
+        tags: ['全部', '作品', '心得体会', '打卡']
+      },
+      {
+        typeId: 5,
+        type: '综合',
+        tags: ['全部', '作品', '心得体会', '奇思妙想', '攻略']
+      }
+    ];
+    return communityTypeList;
+  }
+
+  // 获取社区发现列表数据
+  getPublishList(): Array<PublishItem> {
+    let publishItemList: PublishItem[] = [
+      {
+        itemId: 1,
+        userId: '1',
+        nickName: 'Tony老师',
+        userImage: $r('app.media.avatar1'),
+        roleName: '讲师',
+        publishContent: '白日依山尽，黄河入海流！',
+        videoResource: $rawfile('video1.mp4'),
+        publishDate: '2023-3-3',
+        tags: '#打卡#心得',
+        favoriteCount: 22,
+        commentCount: 11,
+        loveCount: 33,
+        previewImage: $r('app.media.videoprivew1')
+      },
+      {
+        itemId: 2,
+        userId: '1',
+        nickName: 'Tony老师',
+        userImage: $r('app.media.avatar1'),
+        roleName: '讲师',
+        publishContent: '欲穷千里目，更上一层楼！',
+        videoResource: $rawfile('video2.mp4'),
+        publishDate: '2023-3-4',
+        tags: '#心得',
+        favoriteCount: 55,
+        commentCount: 123,
+        loveCount: 55,
+        previewImage: $r('app.media.videoprivew2')
+      },
+      {
+        itemId: 3,
+        userId: '2',
+        nickName: '张飞',
+        userImage: $r('app.media.avatar2'),
+        roleName: '学员',
+        publishContent: '俺来打卡了！',
+        videoResource: $rawfile('video3.mp4'),
+        publishDate: '2023-3-2',
+        tags: '#打卡#学Java',
+        favoriteCount: 22,
+        commentCount: 111,
+        loveCount: 313,
+        previewImage: $r('app.media.videoprivew3')
+      },
+      {
+        itemId: 4,
+        userId: '3',
+        nickName: '大胡子老师',
+        userImage: $r('app.media.avatar3'),
+        roleName: '讲师',
+        publishContent: '胡子的长度和文化水平正相关！',
+        videoResource: $rawfile('video4.mp4'),
+        publishDate: '2023-3-5',
+        tags: '#老师不打卡#心得',
+        favoriteCount: 122,
+        commentCount: 151,
+        loveCount: 30,
+        previewImage: $r('app.media.videoprivew4')
+      },
+      {
+        itemId: 5,
+        userId: '4',
+        nickName: 'helloworld',
+        userImage: $r('app.media.avatar4'),
+        roleName: '学员',
+        publishContent: 'Hello world！',
+        videoResource: $rawfile('video5.mp4'),
+        publishDate: '2023-3-13',
+        tags: '#打卡#心得',
+        favoriteCount: 622,
+        commentCount: 171,
+        loveCount: 338,
+        previewImage: $r('app.media.videoprivew5')
+      },
+      {
+        itemId: 6,
+        userId: '4',
+        nickName: 'helloworld',
+        userImage: $r('app.media.avatar4'),
+        roleName: '学员',
+        publishContent: 'Hello world day1！',
+        videoResource: $rawfile('video6.mp4'),
+        publishDate: '2023-3-12',
+        tags: '#旅拍#心得',
+        favoriteCount: 22,
+        commentCount: 116,
+        loveCount: 3,
+        previewImage: $r('app.media.videoprivew6')
+      },
+      {
+        itemId: 7,
+        userId: '5',
+        nickName: '日复一日',
+        userImage: $r('app.media.avatar5'),
+        roleName: '学员',
+        publishContent: '人面不知何处去，桃花依旧笑春风。',
+        videoResource: $rawfile('video7.mp4'),
+        publishDate: '2023-3-21',
+        tags: '#一日游#心得',
+        favoriteCount: 22,
+        commentCount: 11,
+        loveCount: 4,
+        previewImage: $r('app.media.videoprivew7')
+      },
+      {
+        itemId: 8,
+        userId: '6',
+        nickName: 'Jerry',
+        userImage: $r('app.media.avatar6'),
+        roleName: '讲师',
+        publishContent: '今天干什么？',
+        videoResource: $rawfile('video8.mp4'),
+        publishDate: '2023-3-22',
+        tags: '#打卡#一日游#心得',
+        favoriteCount: 2,
+        commentCount: 11,
+        loveCount: 3,
+        previewImage: $r('app.media.videoprivew8')
+      },
+      {
+        itemId: 9,
+        userId: '7',
+        nickName: '你说呢',
+        userImage: $r('app.media.avatar6'),
+        roleName: '学员',
+        publishContent: '楼上你说啥！',
+        videoResource: $rawfile('video9.mp4'),
+        publishDate: '2023-3-2',
+        tags: '#打卡#美味#心得',
+        favoriteCount: 2,
+        commentCount: 1,
+        loveCount: 3,
+        previewImage: $r('app.media.videoprivew9')
+      },
+      {
+        itemId: 10,
+        userId: '8',
+        nickName: '我是学员我怕谁',
+        userImage: $r('app.media.avatar7'),
+        roleName: '学员',
+        publishContent: '这题真难！',
+        videoResource: $rawfile('video10.mp4'),
+        publishDate: '2023-6-3',
+        tags: '#打卡#心得#开学',
+        favoriteCount: 202,
+        commentCount: 101,
+        loveCount: 33,
+        previewImage: $r('app.media.videoprivew10')
+      },
+      {
+        itemId: 11,
+        userId: '9',
+        nickName: '我loveJava',
+        userImage: $r('app.media.avatar8'),
+        roleName: '学员',
+        publishContent: 'Java YYDS！',
+        videoResource: $rawfile('video11.mp4'),
+        publishDate: '2023-5-3',
+        tags: '#心情#兴趣',
+        favoriteCount: 122,
+        commentCount: 16,
+        loveCount: 3,
+        previewImage: $r('app.media.videoprivew11')
+      },
+      {
+        itemId: 12,
+        userId: '10',
+        nickName: 'r爱Python',
+        userImage: $r('app.media.avatar9'),
+        roleName: '学员',
+        publishContent: 'Python YYDS！',
+        videoResource: $rawfile('video12.mp4'),
+        publishDate: '2023-3-13',
+        tags: '#打卡#晨读',
+        favoriteCount: 52,
+        commentCount: 61,
+        loveCount: 33,
+        previewImage: $r('app.media.videoprivew12')
+      },
+      {
+        itemId: 13,
+        userId: '11',
+        nickName: 'ChatGPT',
+        userImage: $r('app.media.avatar10'),
+        roleName: '学员',
+        publishContent: 'Hi, 有人吗, 出来玩玩！',
+        videoResource: $rawfile('video13.mp4'),
+        publishDate: '2023-2-3',
+        tags: '#面试#心得',
+        favoriteCount: 82,
+        commentCount: 11,
+        loveCount: 33,
+        previewImage: $r('app.media.videoprivew13')
+      },
+      {
+        itemId: 14,
+        userId: '11',
+        nickName: 'ChatGPT',
+        userImage: $r('app.media.avatar10'),
+        roleName: '学员',
+        publishContent: '我是谁！谁能告诉我',
+        videoResource: $rawfile('video14.mp4'),
+        publishDate: '2023-4-3',
+        tags: '#打卡#Java',
+        favoriteCount: 22,
+        commentCount: 61,
+        loveCount: 33,
+        previewImage: $r('app.media.videoprivew14')
+      }
+    ];
+    return publishItemList;
+  }
+
   // 获取课程的二级分类
   static getSubType4Cat(): Array<CourseTypeBean> {
     let courseTypeList: CourseTypeBean[] = [
