@@ -4,7 +4,7 @@ import CourseBean from '../common/bean/CourseBean';
 import CourseTypeBean from '../common/bean/CourseTypeBean';
 import CommunityTypeBean from '../common/bean/CommunityTypeBean';
 import PublishItem from '../common/bean/PublishItem';
-
+import CourseItem from '../common/bean/CourseItem1';
 export class MainViewModel {
 
   // 获取社区发现下的分类列表
@@ -366,6 +366,168 @@ export class MainViewModel {
       new CourseBean('鸿蒙应用开发指南', $r('app.media.course09'), '鸿蒙应用开发实战', 888.00, 7775),
       new CourseBean('鸿蒙设备开发', $r('app.media.course02'), '鸿蒙设备开发入门', 88.00, 9005)
     ];
+    return courseList;
+  }
+  // 获取最近看过的课程
+  getMyRecentCourse(): Array<CourseBean> {
+    let courseList: CourseBean[] = [
+      new CourseBean('Java修炼大法', $r('app.media.course01'), 'Java必须从娃娃抓起', 29, 8299),
+      new CourseBean('Hadoop修炼大法', $r('app.media.course02'), 'Hadoop必须从娃娃抓起', 299, 2999),
+      new CourseBean('鸿蒙修炼大法', $r('app.media.course03'), '鸿蒙必须从娃娃抓起', 99, 9299),
+      new CourseBean('Python修炼大法', $r('app.media.course04'), 'Python必须从娃娃抓起', 99, 2999),
+      new CourseBean('职场必修课', $r('app.media.course05'), '职场必修课必须从幼儿园抓起', 29, 299),
+      new CourseBean('沟通技巧', $r('app.media.course06'), '沟通无处不在', 9, 299),
+      new CourseBean('英语翻译宝典', $r('app.media.course07'), '架起世界的桥梁', 29, 299),
+      new CourseBean('考研辅导不求人', $r('app.media.course08'), '啥都不求人', 99, 299),
+      new CourseBean('自媒体入行指南', $r('app.media.course09'), '男怕入错行', 29, 29),
+      new CourseBean('7天学完AI', $r('app.media.course04'), 'AI真的能替代你吗？', 99, 99)
+    ];
+    return courseList;
+  }
+  // 获取课程分类列表
+  getCourseCategories(): string[] {
+    return [
+      '推荐', 'Java零基础', 'C/C++', 'Python',
+      '计算机等级考试', 'Linux运维', '性能测试',
+      '专业摄影', '英语', '考研', '兴趣副业'
+    ];
+  }
+
+  // 获取课程列表
+  getCourseList(category?: string): Array<CourseItem> {
+    let courseList: CourseItem[] = [
+      {
+        courseId: 1,
+        title: 'Java从入门到陌生',
+        description: 'hot course! good good!',
+        price: 2888,
+        originalPrice: 3888,
+        studentsCount: 115,
+        image: $r('app.media.course1'),
+        category: '推荐',
+        teacher: '张老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.8,
+        isHot: true,
+        isRecommended: true
+      },
+      {
+        courseId: 2,
+        title: '职场小白必修课',
+        description: '职场必备技能全面提升',
+        price: 1888,
+        originalPrice: 2888,
+        studentsCount: 511,
+        image: $r('app.media.course02'),
+        category: '推荐',
+        teacher: '李老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.7,
+        isHot: true,
+        isRecommended: true
+      },
+      {
+        courseId: 3,
+        title: '英语直通车',
+        description: '快速提升英语水平',
+        price: 2887,
+        originalPrice: 3887,
+        studentsCount: 5666,
+        image: $r('app.media.course03'),
+        category: '英语',
+        teacher: '王老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.9,
+        isHot: true,
+        isRecommended: false
+      },
+      {
+        courseId: 4,
+        title: '留学秘籍',
+        description: '留学申请全攻略',
+        price: 8885,
+        originalPrice: 9885,
+        studentsCount: 7775,
+        image: $r('app.media.course04'),
+        category: '英语',
+        teacher: '赵老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.6,
+        isHot: false,
+        isRecommended: true
+      },
+      {
+        courseId: 5,
+        title: '好习惯有好运气',
+        description: '培养良好习惯，改变人生',
+        price: 3,
+        originalPrice: 99,
+        studentsCount: 9005,
+        image: $r('app.media.course05'),
+        category: '兴趣副业',
+        teacher: '陈老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.5,
+        isHot: true,
+        isRecommended: false
+      },
+      {
+        courseId: 6,
+        title: 'Linux内核高级分析课程',
+        description: '从小白到高薪开发',
+        price: 3999,
+        originalPrice: 4999,
+        studentsCount: 234,
+        image: $r('app.media.course06'),
+        category: 'Linux运维',
+        teacher: '刘老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.9,
+        isHot: true,
+        isRecommended: true
+      },
+      {
+        courseId: 7,
+        title: 'C++17大神精讲',
+        description: '后台开发/软件安全',
+        price: 2999,
+        originalPrice: 3999,
+        studentsCount: 456,
+        image: $r('app.media.course07'),
+        category: 'C/C++',
+        teacher: '孙老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.7,
+        isHot: true,
+        isRecommended: false
+      },
+      {
+        courseId: 8,
+        title: 'QT软件工程师',
+        description: 'QT系列课程第一季',
+        price: 1999,
+        originalPrice: 2999,
+        studentsCount: 789,
+        image: $r('app.media.course08'),
+        category: 'C/C++',
+        teacher: '周老师',
+        teacherAvatar: $r('app.media.teacher1'),
+        rating: 4.6,
+        isHot: false,
+        isRecommended: true
+      }
+    ];
+
+    // 如果有分类筛选，返回对应分类的课程
+    if (category && category !== '推荐') {
+      return courseList.filter(course => course.category === category);
+    }
+
+    // 推荐分类返回所有推荐课程
+    if (category === '推荐') {
+      return courseList.filter(course => course.isRecommended);
+    }
+
     return courseList;
   }
 }

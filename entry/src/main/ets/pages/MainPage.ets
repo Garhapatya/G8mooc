@@ -2,6 +2,8 @@ import CommonConstants from '../common/constants/CommonConstants';
 import HomeView from '../view/HomeView';
 import mainViewModel from '../viewmodel/MainViewModel';
 import CommunityView from '../view/CommunityView';
+import MineView from '../view/MineView'; // 导入 MineView 组件
+import CourseView from '../view/CourseView';
 
 @Entry
 @Component
@@ -39,11 +41,7 @@ struct MainPage {
 
       // 课程页（占位）
       TabContent() {
-        Text('课程页面')
-          .fontSize(30)
-          .width('100%')
-          .height('100%')
-          .textAlign(TextAlign.Center)
+        CourseView()
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('课程', 1))
@@ -55,13 +53,9 @@ struct MainPage {
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('社区', 2))
 
-      // 我的页（占位）
+      // 我的页 - 使用 MineView 组件
       TabContent() {
-        Text('我的页面')
-          .fontSize(30)
-          .width('100%')
-          .height('100%')
-          .textAlign(TextAlign.Center)
+        MineView() // 挂载个人中心页面
       }
       .backgroundColor('#f1f3f5')
       .tabBar(this.baseTab('我的', 3))
